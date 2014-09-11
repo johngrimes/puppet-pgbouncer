@@ -1,4 +1,7 @@
 class pgbouncer(
+    $listen_port = 6342,
+    $pool_size,
+    $query_wait_timeout = 60,
     $db_user,
     $db_password
   ) {

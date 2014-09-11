@@ -38,7 +38,7 @@ pidfile = /var/run/postgresql/pgbouncer.pid
 
 ; ip address or * which means all ip-s
 listen_addr = *
-listen_port = <%= @pgbouncer_port %>
+listen_port = <%= @port %>
 
 ; unix socket is also used for -R.
 ; On debian it should be /var/run/postgresql
@@ -115,7 +115,7 @@ max_client_conn = 100
 ; defalt pool size.  20 is good number when transaction pooling
 ; is in use, in session pooling it needs to be the number of
 ; max clients you want to handle at any moment
-default_pool_size = <%= @pgbouncer_pool_size %>
+default_pool_size = <%= @pool_size %>
 
 ; how many additional connection to allow in case of trouble
 ;reserve_pool_size = 5
@@ -162,7 +162,7 @@ default_pool_size = <%= @pgbouncer_pool_size %>
 ;; Dangerous.  Client connection is closed if the query is not assigned
 ;; to a server in this time.  Should be used to limit the number of queued
 ;; queries in case of a database or network failure. (default: 0)
-query_wait_timeout = 60
+query_wait_timeout = <%= @query_wait_timeout %>
 
 ;; Dangerous.  Client connection is closed if no activity in this time.
 ;; Should be used to survive network problems. (default: 0)
